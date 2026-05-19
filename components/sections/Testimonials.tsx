@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Agboola Toheeb',
     role: 'Happy Customer',
     content: 'The quality of the jewelry is absolutely exceptional. Every piece arrived perfectly packaged and looks even more beautiful in person. Highly recommend ROCKYLUXE!',
     rating: 5,

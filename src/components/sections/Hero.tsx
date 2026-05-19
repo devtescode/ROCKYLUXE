@@ -13,14 +13,14 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        
-<img
+
+        <img
           src="/hero-jewelry.jpg"
           alt="Luxury Jewelry"
-          
+
           className="object-cover"
-          
-          
+
+
         />
       </div>
 
@@ -65,7 +65,7 @@ export default function Hero() {
             href="https://wa.me/1234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 sm:px-10 py-4 border-2 border-primary text-primary font-bold rounded-lg text-base sm:text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            className="px-8 sm:px-10 py-4 border-2 border-primary text-primary font-bold rounded-lg text-base sm:text-lg hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
             Chat on WhatsApp
           </a>

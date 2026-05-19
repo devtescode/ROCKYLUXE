@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
+import { FaTiktok } from 'react-icons/fa'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -16,14 +17,14 @@ export default function Footer() {
   const policies = [
     { label: 'Privacy Policy', href: '#' },
     { label: 'Terms & Conditions', href: '#' },
-    { label: 'Shipping Info', href: '#' },
-    { label: 'Returns', href: '#' },
+    { label: 'Delivery Info', href: '#' },
+    // { label: 'Returns', href: '#' },
   ]
 
   const socialLinks = [
     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
     { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-blue-400' },
+    { icon: FaTiktok, href: 'https://tiktok.com', label: 'TikTok', color: 'hover:text-pink-500' },
   ]
 
   return (
@@ -113,32 +114,32 @@ export default function Footer() {
                   <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-muted-foreground text-sm">
-                      123 Luxury Street<br />
-                      Premium City, PC 12345
+                      Challenge, Felele, Ibadan<br />
+                      {/* Premium City, PC 12345 */}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-primary flex-shrink-0" />
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    +1 (234) 567-890
+                  <a href="tel:+234 816 740 8709" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    +234 816 740 8709
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <Mail size={18} className="text-primary flex-shrink-0" />
                   <a href="mailto:info@rockyluxe.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     info@rockyluxe.com
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
           {/* Divider */}
-          <div className="border-t border-border/50 my-8 animate-fade-in animation-delay-300" />
+          <div className="border-t border-border/50 my-0 animate-fade-in animation-delay-300" />
 
           {/* Bottom section */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in-up animation-delay-500">
+          {/* <div className="flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in-up animation-delay-500">
             <p className="text-muted-foreground text-sm text-center sm:text-left">
               &copy; {currentYear} ROCKYLUXE. All rights reserved. Crafted with elegance.
             </p>
@@ -150,11 +151,11 @@ export default function Footer() {
                 Cookie Settings
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Accent line */}
-        <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        {/* <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" /> */}
       </div>
     </footer>
   )

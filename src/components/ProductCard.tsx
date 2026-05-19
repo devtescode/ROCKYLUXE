@@ -35,8 +35,8 @@ export default function ProductCard({
         />
 
         {/* Premium Badge */}
-        <div className="absolute top-4 left-4 px-3 py-1 glass rounded-full text-xs font-semibold text-primary shadow-md">
-          Premium
+        <div className="absolute top-4 left-4 px-3 py-1 glass rounded-full text-xs font-semibold text-white shadow-md">
+          {product.name}
         </div>
 
 
@@ -63,7 +63,7 @@ export default function ProductCard({
       <div className="p-6 flex flex-col h-full justify-between">
         <div>
           <h3 className="text-lg font-bold text-foreground mb-0 line-clamp-2 group-hover:text-primary transition-colors">
-            {product.name}
+            {/* {product.name} */}
           </h3>
 
           <div className="flex items-center gap-2 mb-0">
@@ -81,7 +81,7 @@ export default function ProductCard({
 
         {/* Price and WhatsApp */}
         <div>
-          {/* <div className="w-full p-0 mt-2">
+          <div className="w-full p-0 mt-2">
             <a
               href={whatsappLink}
               target="_blank"
@@ -92,9 +92,10 @@ export default function ProductCard({
                 <FaWhatsapp size={18} /> 
                 Order on WhatsApp</span>
             </a>
-          </div> */}
-          <p className="text-3xl font-bold text-gradient mt-0">{product.price}</p>
+          </div>
+          <p className="text-3xl font-bold text-gradient mt-2">₦{product.price}</p>
           {/* <p className="text-xs text-muted-foreground mt-1">Luxury Jewelry</p> */}
+          {/* <p className="text-xs text-muted-foreground mt-1">{product.name}</p> */}
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 
 
-import { Mail, Phone, MapPin, Instagram, Smartphone, Music } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram, Smartphone, Music, Facebook } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+import { FaTiktok } from 'react-icons/fa'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', message: '' })
@@ -61,7 +62,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-2">Email</h3>
-                  <a href="mailto:contact@rockyluxe.com" className="text-muted-foreground hover:text-primary transition-colors">contact@rockyluxe.com</a>
+                  <a href="mailto:rockyluxe@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">rockyluxe@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -74,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-2">Phone</h3>
-                  <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary transition-colors">+1 (555) 123-4567</a>
+                  <a href="tel:+234 816 740 8709" className="text-muted-foreground hover:text-primary transition-colors">+234 816 740 8709</a>
                 </div>
               </div>
             </div>
@@ -87,7 +88,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-foreground mb-2">Address</h3>
-                  <p className="text-muted-foreground">123 Luxury Ave<br />New York, NY 10001</p>
+                  <p className="text-muted-foreground">Challenge, Felele, Ibadan<br /></p>
                 </div>
               </div>
             </div>
@@ -95,15 +96,20 @@ export default function Contact() {
             {/* Social Links */}
             <div className="pt-4">
               <h3 className="font-bold text-lg text-foreground mb-4">Follow Us</h3>
+
               <div className="flex gap-3">
+
+                {/* TikTok */}
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://tiktok.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 glass rounded-xl hover:bg-green-600/20 hover:border-green-600/50 border border-border/50 transition-all duration-300 hover:scale-110"
+                  className="p-4 glass rounded-xl hover:bg-black/20 border border-border/50 hover:border-white/30 transition-all duration-300 hover:scale-110"
                 >
-                  <Smartphone size={24} className="text-green-500" />
+                  <FaTiktok size={24} className="text-white" />
                 </a>
+
+                {/* Instagram */}
                 <a
                   href="https://instagram.com"
                   target="_blank"
@@ -112,14 +118,17 @@ export default function Contact() {
                 >
                   <Instagram size={24} className="text-pink-500" />
                 </a>
+
+                {/* Facebook */}
                 <a
-                  href="https://tiktok.com"
+                  href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 glass rounded-xl hover:bg-primary/20 hover:border-primary/50 border border-border/50 transition-all duration-300 hover:scale-110"
+                  className="p-4 glass rounded-xl hover:bg-blue-600/20 hover:border-blue-600/50 border border-border/50 transition-all duration-300 hover:scale-110"
                 >
-                  <Music size={24} className="text-primary" />
+                  <Facebook size={24} className="text-blue-600" />
                 </a>
+
               </div>
             </div>
           </div>

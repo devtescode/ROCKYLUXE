@@ -53,7 +53,7 @@ export default function About() {
             </div>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              At ROCKYLUXE, we believe that jewelry is more than just an accessory—it&apos;s a reflection of
+              At ROCKYLUXE, we believe that jewelry is more than just an accessory it&apos;s a reflection of
               your personality and a celebration of life&apos;s precious moments.
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
@@ -64,9 +64,9 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { value: '25+', label: 'Years Experience' },
-                { value: '1000+', label: 'Happy Customers' },
-                { value: '500+', label: 'Unique Designs' }
+                { value: '5+', label: 'Years Experience' },
+                { value: '100+', label: 'Happy Customers' },
+                { value: '50+', label: 'Unique Designs' }
               ].map((stat, idx) => (
                 <div
                   key={idx}
