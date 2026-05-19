@@ -101,7 +101,7 @@ export default function Contact() {
 
                 {/* TikTok */}
                 <a
-                  href="https://tiktok.com"
+                  href="https://www.tiktok.com/@rockybbabe?_r=1&_t=ZS-96Ppgbl1Rky"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 glass rounded-xl hover:bg-black/20 border border-border/50 hover:border-white/30 transition-all duration-300 hover:scale-110"
