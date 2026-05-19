@@ -16,7 +16,9 @@ export default function Shop({
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          'http://localhost:4000/jewelry/getallproducts'
+          // 'http://localhost:4000/jewelry/getallproducts'
+          'https://rockyluxe-bd.onrender.com/jewelry/getallproducts'
+          
         )
         const data = await res.json()
 

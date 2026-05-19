@@ -18,7 +18,8 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
     setIsLoading(true)
 
     try {
-      const res = await fetch("http://localhost:4000/admin/login", {
+      // const res = await fetch("http://localhost:4000/admin/login", {
+      const res = await fetch("https://rockyluxe-bd.onrender.com/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
