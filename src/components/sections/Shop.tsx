@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import ProductCard from '@/components/ProductCard'
+import type { Product } from '@/types/product'
 
 export default function Shop({
   onProductClick,
 }: {
-  onProductClick: (product: any) => void
+  onProductClick: (product: Product) => void
 }) {
-  const [products, setProducts] = useState<any[]>([])
+  const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -69,7 +70,7 @@ export default function Shop({
         ) : (
           /* PRODUCTS FROM BACKEND */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {products.map((product: any, index: number) => (
+            {products.map((product, index) => (
               <div
                 key={product._id || product.id}
                 className="animate-fade-in-up"

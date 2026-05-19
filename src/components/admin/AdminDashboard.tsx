@@ -5,23 +5,16 @@ import { LogOut, Plus, Trash2, Edit } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import AdminProductForm from './AdminProductForm'
+import { toImageArray } from '@/lib/productImages'
+import type { AdminFormProduct } from '@/types/product'
 
 interface Product {
   _id: string
   name: string
-  price: string
-  imageURL: string
+  price: string | number
+  imageURLs: string | string[]
   description: string
   category: string
-}
-
-interface FormProduct {
-  name: string;
-  price: string;
-  images: (string | File)[];
-  description: string;
-  availability: string;
-  id?: string;
 }
 
 interface AdminDashboardProps {
@@ -40,7 +33,7 @@ export default function AdminDashboard({
   const [products, setProducts] = useState<Product[]>([])
   const [showForm, setShowForm] = useState(false)
   const [editingProduct, setEditingProduct] =
-    useState<FormProduct | null>(null)
+    useState<AdminFormProduct | null>(null)
 
   const [loading, setLoading] = useState(true)
 
@@ -230,6 +223,7 @@ export default function AdminDashboard({
                 </h3>
 
                 <AdminProductForm
+                  key={editingProduct?.id ?? 'new'}
                   product={editingProduct}
                   onSave={handleSaveProduct}
                 />
@@ -243,7 +237,7 @@ export default function AdminDashboard({
                   <thead className="bg-secondary border-b border-border">
                     <tr>
                       <th className="px-6 py-4 text-left text-foreground font-semibold">
-                        Image
+                        Images
                       </th>
 
                       <th className="px-6 py-4 text-left text-foreground font-semibold">
@@ -289,14 +283,31 @@ export default function AdminDashboard({
                           key={product._id}
                           className="hover:bg-secondary/50 transition-colors"
                         >
-                          {/* IMAGE */}
+                          {/* IMAGES */}
                           <td className="px-6 py-4">
-                            <div className="w-14 h-14 rounded-lg overflow-hidden bg-secondary">
-                              <img
-                                src={product.imageURL}
-                                alt={product.name}
-                                className="w-full h-full object-cover"
-                              />
+                            <div className="flex items-center gap-1">
+                              {toImageArray(product.imageURLs)
+                                .slice(0, 3)
+                                .map((url, i) => (
+                                  <div
+                                    key={i}
+                                    className="w-12 h-12 rounded-lg overflow-hidden bg-secondary border border-border shrink-0"
+                                  >
+                                    <img
+                                      src={url}
+                                      alt={`${product.name} ${i + 1}`}
+                                      className="w-full h-full object-cover"
+                                    />
+                                  </div>
+                                ))}
+                              {toImageArray(product.imageURLs).length > 3 && (
+                                <span className="text-xs font-semibold text-muted-foreground ml-1">
+                                  +{toImageArray(product.imageURLs).length - 3}
+                                </span>
+                              )}
+                              {toImageArray(product.imageURLs).length === 0 && (
+                                <span className="text-xs text-muted-foreground">No image</span>
+                              )}
                             </div>
                           </td>
 
@@ -330,8 +341,8 @@ export default function AdminDashboard({
                                 onClick={() => {
                                   setEditingProduct({
                                     name: product.name,
-                                    price: product.price,
-                                    images: product.imageURL ? [product.imageURL] : [],
+                                    price: String(product.price),
+                                    images: toImageArray(product.imageURLs),
                                     description: product.description,
                                     availability: product.category,
                                     id: product._id,

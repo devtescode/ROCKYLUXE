@@ -10,14 +10,15 @@ import FAQ from '@/components/sections/FAQ'
 import Navigation from '@/components/Navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ProductModal from '@/components/ProductModal'
+import type { Product } from '@/types/product'
 import Footer from '@/components/Footer'
 import AdminPage from '@/pages/AdminPage'
 
 function Home() {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [modalOpen, setModalOpen] = useState(false)
 
-  const openModal = (product: any) => {
+  const openModal = (product: Product) => {
     setSelectedProduct(product)
     setModalOpen(true)
   }
