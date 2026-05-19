@@ -162,8 +162,8 @@ export default function AdminProductForm({
 
       const isEdit = !!product?.id
       const url = isEdit
-        ? `http://localhost:4000/jewelry/editproducts/${product!.id}`
-        : `http://localhost:4000/jewelry/addproducts`
+        ? `https://rockyluxe-bd.onrender.com/jewelry/editproducts/${product!.id}`
+        : `https://rockyluxe-bd.onrender.com/jewelry/addproducts`
       const method = isEdit ? 'PUT' : 'POST'
 
       const res = await fetch(url, { method, body: data })
