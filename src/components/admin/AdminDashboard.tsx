@@ -136,7 +136,7 @@ export default function AdminDashboard({
   return (
     <div className="min-h-screen bg-background">
       {/* HEADER */}
-      <header className="bg-card border-b border-border sticky top-0 z-40">
+      <header className="bg-black border-b border-border sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
           <div>
             <h1 className="text-3xl font-bold text-primary">
