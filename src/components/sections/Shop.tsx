@@ -40,7 +40,6 @@ export default function Shop({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section header (UNCHANGED UI) */}
         <div className="text-center mb-20 animate-fade-in-up">
           <p className="text-primary text-sm sm:text-base font-semibold tracking-widest uppercase mb-4">
             Curated Excellence
