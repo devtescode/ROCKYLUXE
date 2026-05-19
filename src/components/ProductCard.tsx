@@ -17,13 +17,13 @@ export default function ProductCard({
   const extraCount = images.length > 1 ? images.length - 1 : 0
 
   return (
-    <div className="group relative glass border border-border/50 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_50px_rgba(200,162,74,0.2)] hover:scale-102">
+    <div className="group relative glass border border-border/50 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:scale-102">
       <div className="relative h-72 overflow-hidden bg-secondary">
         {primaryImage ? (
           <img
             src={primaryImage}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            className="w-full h-full object-cover transition-transform duration-110 ease-out"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-muted-foreground">
