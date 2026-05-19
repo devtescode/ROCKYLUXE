@@ -320,7 +320,7 @@ export default function AdminDashboard({
 
                           {/* PRICE */}
                           <td className="px-6 py-4 text-primary font-semibold">
-                            ₦{product.price}
+                            ₦{product.price.toLocaleString()}
                           </td>
 
                           {/* CATEGORY */}

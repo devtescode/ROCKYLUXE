@@ -82,7 +82,7 @@ export default function ProductCard({
               </span>
             </WhatsAppOrderButton>
           </div>
-          <p className="text-3xl font-bold text-gradient mt-2">₦{product.price}</p>
+          <p className="text-3xl font-bold text-gradient mt-2">₦{product.price.toLocaleString()}</p>
         </div>
       </div>
     </div>
