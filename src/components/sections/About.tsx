@@ -33,7 +33,7 @@ export default function About() {
           <div className="relative h-96 sm:h-[500px] rounded-2xl overflow-hidden glass border border-border/50 shadow-2xl shadow-primary/10 animate-slide-in-left">
 
             <img
-              src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop"
+              src="https://i.pinimg.com/736x/e4/71/f7/e471f701026a637d187b6fd2b580d7b5.jpg"
               alt="ROCKYLUXE Brand"
 
               className="object-cover hover:scale-110 transition-transform duration-500 ease-out"

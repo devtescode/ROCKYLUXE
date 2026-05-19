@@ -131,7 +131,7 @@ export default function ProductModal({
 
           <div className="space-y-4">
             <div className="flex justify-between items-center flex-wrap gap-3">
-              <p className="text-4xl font-bold text-primary">₦{product.price}</p>
+              <p className="text-4xl font-bold text-primary">₦{product.price.toLocaleString()}</p>
               {product.category && (
                 <span
                   className={`px-4 py-2 rounded-full text-sm font-semibold ${
