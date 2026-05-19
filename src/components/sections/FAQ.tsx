@@ -113,7 +113,7 @@ export default function FAQ() {
             Chat with us on WhatsApp or email us directly. Our team is here to help!
           </p>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/2348167408709"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-[0_0_50px_rgba(200,162,74,0.5)] transition-all duration-300 hover:scale-105"

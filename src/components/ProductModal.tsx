@@ -23,7 +23,7 @@ export default function ProductModal({
   }, [productId])
 
   const whatsappMessage = `Hello, I want to order: ${product.name}, Price: ₦${product.price}`
-  const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`
+  const whatsappLink = `https://wa.me/2348167408709?text=${encodeURIComponent(whatsappMessage)}`
 
   const goToImage = (index: number) => {
     if (images.length <= 1 || index === currentImageIndex) return

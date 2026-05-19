@@ -23,7 +23,7 @@ export default function ProductCard({
   const [isLiked, setIsLiked] = useState(false)
 
   const whatsappMessage = `Hello, I want to order: ${product.name}, Price: ${product.price}`
-  const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`
+  const whatsappLink = `https://wa.me/2348167408709?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
     <div className="group relative h-full glass border border-border/50 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_50px_rgba(200,162,74,0.2)] hover:scale-105">

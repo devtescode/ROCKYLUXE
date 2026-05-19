@@ -61,7 +61,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/2348167408709"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 sm:px-10 py-4 border-2 border-primary text-primary font-bold rounded-lg text-base sm:text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 backdrop-blur-sm"

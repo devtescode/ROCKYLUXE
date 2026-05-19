@@ -97,7 +97,7 @@ export default function Contact() {
               <h3 className="font-bold text-lg text-foreground mb-4">Follow Us</h3>
               <div className="flex gap-3">
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/2348167408709"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 glass rounded-xl hover:bg-green-600/20 hover:border-green-600/50 border border-border/50 transition-all duration-300 hover:scale-110"

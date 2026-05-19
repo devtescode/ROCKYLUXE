@@ -28,7 +28,7 @@ export default function ProductModal({
   const images = [product.imageURL]
 
   const whatsappMessage = `Hello, I want to order: ${product.name}, Price: ${product.price}`
-  const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`
+  const whatsappLink = `https://wa.me/2348167408709?text=${encodeURIComponent(whatsappMessage)}`
 
   const nextImage = () => {
     if (images.length > 1) {
