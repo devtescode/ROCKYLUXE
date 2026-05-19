@@ -22,7 +22,7 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
+    { icon: Instagram, href: 'https://www.instagram.com/roqeebatadewale?utm_source=qr&igsh=cXgxMHJtOTh1d3Js', label: 'Instagram', color: 'hover:text-pink-500' },
     { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-500' },
     { icon: FaTiktok, href: 'https://www.tiktok.com/@rockybbabe?_r=1&_t=ZS-96Ppgbl1Rky', label: 'TikTok', color: 'hover:text-pink-500' },
   ]

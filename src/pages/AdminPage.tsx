@@ -116,7 +116,7 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
     setIsLoading(true)
 
     try {
-      const res = await fetch("http://localhost:4000/admin/register", {
+      const res = await fetch("https://rockyluxe-bd.onrender.com/admin/register", {
         // const res = await fetch("http://localhost:4000/jewelry/register", {
         method: "POST",
         headers: {
@@ -216,7 +216,7 @@ export default function AdminPage() {
   useEffect(() => {
     const checkAdmin = async () => {
       try {
-        const res = await fetch("http://localhost:4000/admin/status")
+        const res = await fetch("https://rockyluxe-bd.onrender.com/admin/status")
         const data = await res.json()
 
         setAdminExists(data.adminExists)
