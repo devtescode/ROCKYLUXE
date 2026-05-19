@@ -2,6 +2,7 @@
 
 import { FaWhatsapp } from 'react-icons/fa'
 import { getPrimaryImage, toImageArray } from '@/lib/productImages'
+import WhatsAppOrderButton from '@/components/WhatsAppOrderButton'
 import type { Product } from '@/types/product'
 
 export default function ProductCard({
@@ -14,10 +15,6 @@ export default function ProductCard({
   const images = toImageArray(product.imageURLs)
   const primaryImage = getPrimaryImage(product.imageURLs)
   const extraCount = images.length > 1 ? images.length - 1 : 0
-
-  const whatsappMessage = `Hello, I want to order: ${product.name}, Price: ₦${product.price}`
-  // const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`
-  const whatsappLink = `https://wa.me/2348167408709?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
     <div className="group relative glass border border-border/50 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_50px_rgba(200,162,74,0.2)] hover:scale-102">
@@ -44,17 +41,16 @@ export default function ProductCard({
           {product.name}
         </div>
 
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <WhatsAppOrderButton
+          product={product}
           className="absolute top-4 right-4 p-2.5 glass rounded-full transition-all duration-300 z-10 hover:scale-110 bg-green-600 text-white hover:bg-green-700"
-          aria-label="Order on WhatsApp"
         >
-          <FaWhatsapp size={20} />
-        </a>
+          <FaWhatsapp size={20} aria-hidden />
+          <span className="sr-only">Order on WhatsApp</span>
+        </WhatsAppOrderButton>
 
         <button
+          type="button"
           onClick={onViewMore}
           className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2 bg-primary text-primary-foreground rounded-full shadow-lg font-semibold text-sm transition-all duration-300 hover:bg-primary/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
@@ -76,17 +72,15 @@ export default function ProductCard({
 
         <div>
           <div className="w-full p-0 mt-2">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full px-4 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 scale-100 block text-center shadow-md"
+            <WhatsAppOrderButton
+              product={product}
+              className="w-full px-4 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 block text-center shadow-md"
             >
               <span className="inline-flex items-center gap-2 justify-center">
                 <FaWhatsapp size={18} />
                 Order on WhatsApp
               </span>
-            </a>
+            </WhatsAppOrderButton>
           </div>
           <p className="text-3xl font-bold text-gradient mt-2">₦{product.price}</p>
         </div>

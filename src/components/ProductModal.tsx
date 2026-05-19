@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { toImageArray } from '@/lib/productImages'
+import WhatsAppOrderButton from '@/components/WhatsAppOrderButton'
 import type { Product } from '@/types/product'
 
 export default function ProductModal({
@@ -21,9 +22,6 @@ export default function ProductModal({
   useEffect(() => {
     setCurrentImageIndex(0)
   }, [productId])
-
-  const whatsappMessage = `Hello, I want to order: ${product.name}, Price: ₦${product.price}`
-  const whatsappLink = `https://wa.me/2348167408709?text=${encodeURIComponent(whatsappMessage)}`
 
   const goToImage = (index: number) => {
     if (images.length <= 1 || index === currentImageIndex) return
@@ -154,14 +152,17 @@ export default function ProductModal({
             )}
 
             <div className="flex flex-col gap-3">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-[0_0_30px_rgba(200,162,74,0.4)] text-center text-lg"
+              <WhatsAppOrderButton
+                product={product}
+                orderOptions={{
+                  imageUrl: images[currentImageIndex],
+                  imageIndex: currentImageIndex,
+                  totalImages: images.length,
+                }}
+                className="w-full px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-[0_0_30px_rgba(200,162,74,0.4)] text-center text-lg block"
               >
                 Order on WhatsApp
-              </a>
+              </WhatsAppOrderButton>
               <button
                 type="button"
                 onClick={onClose}
