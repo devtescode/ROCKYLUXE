@@ -147,7 +147,7 @@ export default function Contact() {
               />
             </div>
 
-            <div>
+            <div className='my-5'>
               <label className="block text-foreground font-bold mb-3">Message</label>
               <textarea
                 value={formData.message}
@@ -159,16 +159,18 @@ export default function Contact() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-[0_0_40px_rgba(200,162,74,0.5)] transition-all duration-300 hover:scale-105"
-            >
-              Send Message
-            </button>
+            <div className='mt-5'>
+              <button
+                type="submit"
+                className="w-full px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-[0_0_40px_rgba(200,162,74,0.5)] transition-all duration-300 hover:scale-105"
+              >
+                Send Message
+              </button>
 
-            {submitted && (
-              <p className="text-center text-green-400 font-semibold animate-fade-in">✓ Message sent successfully!</p>
-            )}
+              {submitted && (
+                <p className="text-center text-green-400 font-semibold animate-fade-in">✓ Message sent successfully!</p>
+              )}
+            </div>
           </form>
         </div>
       </div>
