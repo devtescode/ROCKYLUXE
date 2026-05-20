@@ -88,7 +88,7 @@ export default function Navigation() {
             isOpen ? 'translate-y-4 opacity-100 scale-100 pointer-events-auto' : '-translate-y-20 opacity-0 scale-95 pointer-events-none'
           }`}
           style={{
-            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+            // boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
             // border: '1.5px solid rgba(255,255,255,0.18)',
             borderRadius: '1rem',
             background: 'rgba(255,255,255,0.15)',
