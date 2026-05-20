@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { LogOut, Plus, Trash2, Edit } from 'lucide-react'
+import { LogOut, Plus, Trash2, Edit, Eye, EyeOff } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import AdminProductForm from './AdminProductForm'
 import { toImageArray } from '@/lib/productImages'
 import type { AdminFormProduct } from '@/types/product'
+
+
 
 interface Product {
   _id: string
@@ -131,6 +133,85 @@ export default function AdminDashboard({
     setEditingProduct(null)
   }
 
+
+
+
+const [passwordData, setPasswordData] = useState({
+  currentPassword: '',
+  newPassword: '',
+})
+
+const [passwordLoading, setPasswordLoading] = useState(false)
+
+const [showCurrentPassword, setShowCurrentPassword] =
+  useState(false)
+
+const [showNewPassword, setShowNewPassword] =
+  useState(false)
+
+const handlePasswordChange = (
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+  setPasswordData({
+    ...passwordData,
+    [e.target.name]: e.target.value,
+  })
+}
+
+const handleUpdatePassword = async (
+  e: React.FormEvent
+) => {
+  e.preventDefault()
+
+  try {
+    setPasswordLoading(true)
+
+    const res = await fetch(
+      'https://rockyluxe-bd.onrender.com/admin/changepassword',
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(passwordData),
+      }
+    )
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: data.message || 'Failed to update password',
+      })
+
+      return
+    }
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Success',
+      text: 'Password updated successfully',
+    })
+
+    setPasswordData({
+      currentPassword: '',
+      newPassword: '',
+    })
+  } catch (err) {
+    console.log(err)
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Network Error',
+      text: 'Something went wrong',
+    })
+  } finally {
+    setPasswordLoading(false)
+  }
+}
+
   const BackToHome = () => {
     navigate('/')
   }
@@ -165,22 +246,20 @@ export default function AdminDashboard({
         <div className="flex gap-4 mb-8 border-b border-border">
           <button
             onClick={() => setActiveTab('products')}
-            className={`px-4 py-2 font-semibold border-b-2 transition-colors ${
-              activeTab === 'products'
-                ? 'border-primary text-primary'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
-            }`}
+            className={`px-4 py-2 font-semibold border-b-2 transition-colors ${activeTab === 'products'
+              ? 'border-primary text-primary'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
+              }`}
           >
             Products
           </button>
 
           <button
             onClick={() => setActiveTab('settings')}
-            className={`px-4 py-2 font-semibold border-b-2 transition-colors ${
-              activeTab === 'settings'
-                ? 'border-primary text-primary'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
-            }`}
+            className={`px-4 py-2 font-semibold border-b-2 transition-colors ${activeTab === 'settings'
+              ? 'border-primary text-primary'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
+              }`}
           >
             Settings
           </button>
@@ -326,11 +405,10 @@ export default function AdminDashboard({
                           {/* CATEGORY */}
                           <td className="px-6 py-4">
                             <span
-                              className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                                product.category === 'In Stock'
-                                  ? 'bg-green-500/20 text-green-400'
-                                  : 'bg-yellow-500/20 text-yellow-400'
-                              }`}
+                              className={`px-3 py-1 rounded-full text-sm font-semibold ${product.category === 'In Stock'
+                                ? 'bg-green-500/20 text-green-400'
+                                : 'bg-yellow-500/20 text-yellow-400'
+                                }`}
                             >
                               {product.category}
                             </span>
@@ -384,35 +462,98 @@ export default function AdminDashboard({
             <div className="space-y-6 max-w-2xl">
               {/* Change Password */}
               <div>
-                <h4 className="text-lg font-semibold text-foreground mb-4">Change Password</h4>
-                <form className="space-y-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
+                  Change Password
+                </h4>
+
+                <form
+                  onSubmit={handleUpdatePassword}
+                  className="space-y-4"
+                >
+                  {/* CURRENT PASSWORD */}
                   <div>
-                    <label className="block text-foreground font-semibold mb-2">Current Password</label>
-                    <input
-                      type="password"
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
-                      placeholder="Enter current password"
-                    />
+                    <label className="block text-foreground font-semibold mb-2">
+                      Current Password
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type={
+                          showCurrentPassword ? 'text' : 'password'
+                        }
+                        name="currentPassword"
+                        value={passwordData.currentPassword}
+                        onChange={handlePasswordChange}
+                        className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
+                        placeholder="Enter current password"
+                        required
+                      />
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowCurrentPassword(
+                            !showCurrentPassword
+                          )
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {showCurrentPassword ? (
+                          <EyeOff size={20} />
+                        ) : (
+                          <Eye size={20} />
+                        )}
+                      </button>
+                    </div>
                   </div>
+
+                  {/* NEW PASSWORD */}
                   <div>
-                    <label className="block text-foreground font-semibold mb-2">New Password</label>
-                    <input
-                      type="password"
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
-                      placeholder="Enter new password"
-                    />
+                    <label className="block text-foreground font-semibold mb-2">
+                      New Password
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type={showNewPassword ? 'text' : 'password'}
+                        name="newPassword"
+                        value={passwordData.newPassword}
+                        onChange={handlePasswordChange}
+                        className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
+                        placeholder="Enter new password"
+                        required
+                      />
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowNewPassword(!showNewPassword)
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {showNewPassword ? (
+                          <EyeOff size={20} />
+                        ) : (
+                          <Eye size={20} />
+                        )}
+                      </button>
+                    </div>
                   </div>
+
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-opacity-90 transition-all"
+                    disabled={passwordLoading}
+                    className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-opacity-90 transition-all disabled:opacity-50"
                   >
-                    Update Password
+                    {passwordLoading
+                      ? 'Updating...'
+                      : 'Update Password'}
                   </button>
                 </form>
               </div>
 
               {/* Store Info */}
-              <div className="pt-8 border-t border-border">
+              {/* <div className="pt-8 border-t border-border">
                 <h4 className="text-lg font-semibold text-foreground mb-4">Store Information</h4>
                 <form className="space-y-4">
                   <div>
@@ -446,7 +587,7 @@ export default function AdminDashboard({
                     Save Changes
                   </button>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
