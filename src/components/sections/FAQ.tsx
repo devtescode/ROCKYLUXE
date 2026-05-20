@@ -108,7 +108,7 @@ export default function FAQ() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 text-center p-8 sm:p-12 glass border border-border/50 rounded-2xl hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 animate-fade-in-up animation-delay-400">
+        <div className="mt-15 text-center p-8 sm:p-12 glass border border-border/50 rounded-2xl hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 animate-fade-in-up animation-delay-400">
           <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Didn&apos;t find your answer?</h3>
           <p className="text-lg text-muted-foreground mb-8">
             Chat with us on WhatsApp or email us directly. Our team is here to help!
