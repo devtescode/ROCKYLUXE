@@ -59,7 +59,7 @@ export default function Testimonials() {
   const currentTestimonial = testimonials[currentIndex]
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
+    <section ref={sectionRef} className="relative py-0 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2"></div>
@@ -68,10 +68,10 @@ export default function Testimonials() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-1">
             Testimonials
           </p>
-          <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-6">
+          <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-4">
             <span className="text-gradient">Customer Stories</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
