@@ -262,7 +262,7 @@ export default function AdminProductForm({
         </div>
       </div>
 
-      <div>
+      <div className='mt-5'>
         <label className="block text-foreground font-semibold mb-2">
           Product Images * ({formData.images.length} selected)
         </label>
@@ -358,6 +358,7 @@ export default function AdminProductForm({
           required
           rows={5}
           className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+          placeholder='write the product description...'
         />
       </div>
 
