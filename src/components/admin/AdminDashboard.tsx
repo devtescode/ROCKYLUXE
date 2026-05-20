@@ -505,7 +505,7 @@ export default function AdminDashboard({
                     </div>
 
                     {/* NEW PASSWORD */}
-                    <div>
+                    <div className='mt-5'>
                       <label className="block text-foreground font-semibold mb-2">
                         New Password
                       </label>
