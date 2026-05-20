@@ -224,6 +224,7 @@ export default function AdminProductForm({
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder='Product Name'
             required
             className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors"
           />
@@ -238,6 +239,7 @@ export default function AdminProductForm({
             name="price"
             value={formData.price}
             onChange={handleChange}
+            placeholder='Price'
             required
             min={0}
             className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors"
