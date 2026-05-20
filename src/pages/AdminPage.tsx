@@ -164,6 +164,9 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
           </div>
 
           <form onSubmit={handleRegister} className="space-y-6">
+            <label className="block text-foreground font-semibold mb-2 mt-0">
+              fullName
+            </label>
             <input
               type="text"
               placeholder="Full Name"
@@ -173,6 +176,9 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
               disabled={isLoading}
             />
 
+            <label className="block text-foreground font-semibold mb-2 mt-0">
+              Email
+            </label>
             <input
               type="email"
               placeholder="Email"
@@ -182,6 +188,9 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
               disabled={isLoading}
             />
 
+            <label className="block text-foreground font-semibold mb-2 mt-0">
+              Password
+            </label>
             <input
               type="password"
               placeholder="Password"
@@ -195,13 +204,15 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
               <p className="text-red-500 text-center">{error}</p>
             )}
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full px-6 py-3 bg-primary text-white font-bold rounded-lg"
-            >
-              {isLoading ? "Creating..." : "Create Admin"}
-            </button>
+            <div className='flex justify-center'>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-50 px-6 py-3 bg-primary text-white font-bold rounded-lg"
+              >
+                {isLoading ? "Creating..." : "Create Admin"}
+              </button>
+            </div>
 
           </form>
 
