@@ -473,12 +473,12 @@ export default function AdminDashboard({
                     
 
                     {/* CURRENT PASSWORD */}
-                    <div>
+                    <div className=''>
                       <label className="block text-foreground font-semibold mb-2">
                         Current Password
                       </label>
 
-                      <div className="relative mt-5">
+                      <div className="relative mt-2">
                         <input
                           type={showCurrentPassword ? 'text' : 'password'}
                           name="currentPassword"
