@@ -68,7 +68,7 @@ export default function Contact() {
             </div>
 
             {/* Phone */}
-            <div className="glass border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
+            <div className="glass mt-5 border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
               <div className="flex gap-4">
                 <div className="p-3 bg-primary/20 rounded-lg h-fit">
                   <Phone className="text-primary" size={28} />
@@ -81,7 +81,7 @@ export default function Contact() {
             </div>
 
             {/* Address */}
-            <div className="glass border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
+            <div className="glass mt-5 border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
               <div className="flex gap-4">
                 <div className="p-3 bg-primary/20 rounded-lg h-fit">
                   <MapPin className="text-primary" size={28} />
