@@ -462,7 +462,7 @@ export default function AdminDashboard({
             <div className="space-y-6 max-w-2xl">
               {/* Change Password */}
               <div>
-            
+
 
                 <form
                   onSubmit={handleUpdatePassword}
@@ -470,74 +470,76 @@ export default function AdminDashboard({
                 >
                   {/* CURRENT PASSWORD */}
                   {/* <div> */}
-                    
 
-                    {/* CURRENT PASSWORD */}
-                    <div className=''>
-                      <label className="block text-foreground font-semibold mb-2">
-                        Current Password
-                      </label>
 
-                      <div className="relative mt-2">
-                        <input
-                          type={showCurrentPassword ? 'text' : 'password'}
-                          name="currentPassword"
-                          value={passwordData.currentPassword}
-                          onChange={handlePasswordChange}
-                          className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
-                          placeholder="Enter current password"
-                          required
-                        />  
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setShowCurrentPassword(!showCurrentPassword)
-                          }
-                          className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {showCurrentPassword ? (
-                            <EyeOff size={20} />
-                          ) : (
-                            <Eye size={20} />
-                          )}
-                        </button>
-                      </div>
+                  {/* CURRENT PASSWORD */}
+                  <div className=''>
+                    <label className="block text-foreground font-semibold mb-2">
+                      Current Password
+                    </label>
+
+                    <div className="relative mt-2">
+                      <input
+                        type={showCurrentPassword ? 'text' : 'password'}
+                        name="currentPassword"
+                        value={passwordData.currentPassword}
+                        onChange={handlePasswordChange}
+                        className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
+                        placeholder="Enter current password"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowCurrentPassword(!showCurrentPassword)
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {showCurrentPassword ? (
+                          <EyeOff size={20} />
+                        ) : (
+                          <Eye size={20} />
+                        )}
+                      </button>
                     </div>
+                  </div>
 
-                    {/* NEW PASSWORD */}
-                    <div className='mt-5'>
-                      <label className="block text-foreground font-semibold mb-2">
-                        New Password
-                      </label>
+                  {/* NEW PASSWORD */}
+                  <div className='mt-5'>
+                    <label className="block text-foreground font-semibold mb-2">
+                      New Password
+                    </label>
 
-                      <div className="relative mt-2">
-                        <input
-                          type={showNewPassword ? 'text' : 'password'}
-                          name="newPassword"
-                          value={passwordData.newPassword}
-                          onChange={handlePasswordChange}
-                          className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
-                          placeholder="Enter new password"
-                          required
-                        />
+                    <div className="relative mt-2">
+                      <input
+                        type={showNewPassword ? 'text' : 'password'}
+                        name="newPassword"
+                        value={passwordData.newPassword}
+                        onChange={handlePasswordChange}
+                        className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
+                        placeholder="Enter new password"
+                        required
+                      />
 
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setShowNewPassword(!showNewPassword)
-                          }
-                          className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {showNewPassword ? (
-                            <EyeOff size={20} />
-                          ) : (
-                            <Eye size={20} />
-                          )}
-                        </button>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowNewPassword(!showNewPassword)
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {showNewPassword ? (
+                          <EyeOff size={20} />
+                        ) : (
+                          <Eye size={20} />
+                        )}
+                      </button>
                     </div>
+                  </div>
 
-                    {/* BUTTON */}
+                  {/* BUTTON */}
+                  <div className='mt-5'>
+
                     <button
                       type="submit"
                       disabled={passwordLoading}
@@ -545,6 +547,7 @@ export default function AdminDashboard({
                     >
                       {passwordLoading ? 'Updating...' : 'Update Password'}
                     </button>
+                  </div>
                 </form>
               </div>
 
