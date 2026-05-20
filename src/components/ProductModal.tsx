@@ -130,7 +130,7 @@ export default function ProductModal({
           )}
 
           <div className="space-y-4">
-            <div className="flex justify-between items-center flex-wrap gap-3">
+            <div className="flex justify-between items-center flex-wrap gap-3 mt-5">
               <p className="text-4xl font-bold text-primary">₦{product.price.toLocaleString()}</p>
               {product.category && (
                 <span
@@ -151,7 +151,7 @@ export default function ProductModal({
               </p>
             )}
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 mt-5">
               <WhatsAppOrderButton
                 product={product}
                 orderOptions={{
