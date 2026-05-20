@@ -75,8 +75,11 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
             </div>
 
             {/* PASSWORD */}
-            <div>
-              <label className="block text-foreground font-semibold mb-2">Password</label>
+            <div className="mt-4">
+              <label className="block text-foreground font-semibold mb-2 mt-1">
+                Password
+              </label>
+
               <input
                 type="password"
                 value={password}
