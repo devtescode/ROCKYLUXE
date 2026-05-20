@@ -510,7 +510,7 @@ export default function AdminDashboard({
                         New Password
                       </label>
 
-                      <div className="relative mt-5">
+                      <div className="relative mt-2">
                         <input
                           type={showNewPassword ? 'text' : 'password'}
                           name="newPassword"
