@@ -28,7 +28,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-secondary/50 glass border-t border-border relative overflow-hidden">
+    <footer className="bg-secondary/50 glass border-t border-border relative overflow-hidden mt-10">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-float" />
@@ -50,7 +50,7 @@ export default function Footer() {
                   <p className="text-xs text-muted-foreground">Luxury Jewelry</p>
                 </div>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed mt-5">
                 Crafted with elegance, designed for those who appreciate timeless beauty and sophistication.
               </p>
               <div className="flex gap-4 pt-4">
@@ -110,7 +110,7 @@ export default function Footer() {
             <div className="space-y-4 animate-fade-in-up animation-delay-400">
               <h4 className="text-lg font-bold text-foreground">Contact</h4>
               <div className="space-y-3">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 mt-2">
                   <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-muted-foreground text-sm">
@@ -119,7 +119,7 @@ export default function Footer() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 mt-2">
                   <Phone size={18} className="text-primary flex-shrink-0" />
                   <a href="tel:+234 816 740 8709" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     +234 816 740 8709
