@@ -41,8 +41,8 @@ export default function Navigation() {
       {/* Animated Mobile Menu */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
         isScrolled 
-          ? 'bg-background/95 glass border-b border-border/50 backdrop-blur-sm' 
-          : 'bg-background border-b border-transparent'
+          ? 'bg-background/95 glass border-none border-border/50 backdrop-blur-sm' 
+          : 'bg-background border-none border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -89,7 +89,7 @@ export default function Navigation() {
           }`}
           style={{
             boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-            border: '1.5px solid rgba(255,255,255,0.18)',
+            // border: '1.5px solid rgba(255,255,255,0.18)',
             borderRadius: '1rem',
             background: 'rgba(255,255,255,0.15)',
             backdropFilter: 'blur(18px) saturate(180%)',
