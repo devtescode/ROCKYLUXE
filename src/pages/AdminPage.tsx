@@ -57,8 +57,8 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
         <div className="relative bg-card border border-border rounded-2xl p-8 backdrop-blur-sm">
 
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-primary mb-2">ROCKYLUXE</h1>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Admin Login</h2>
+            <h1 className="text-4xl font-bold text-primary mb-0">ROCKYLUXE</h1>
+            <h2 className="text-2xl font-bold text-foreground mb-0">Admin Login</h2>
             <p className="text-muted-foreground">Enter your credentials to continue</p>
           </div>
 
