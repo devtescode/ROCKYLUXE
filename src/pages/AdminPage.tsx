@@ -92,7 +92,7 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-6 py-3 bg-primary text-primary-foreground font-bold rounded-lg"
+              className="w-full px-6 mt-4 py-3 bg-primary text-primary-foreground font-bold rounded-lg"
             >
               {isLoading ? "Logging in..." : "Login"}
             </button>
