@@ -90,7 +90,7 @@ export default function Navigation() {
           style={{
             boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
             border: '1.5px solid rgba(255,255,255,0.18)',
-            borderRadius: '2rem',
+            borderRadius: '1rem',
             background: 'rgba(255,255,255,0.15)',
             backdropFilter: 'blur(18px) saturate(180%)',
             WebkitBackdropFilter: 'blur(18px) saturate(180%)',
@@ -104,25 +104,25 @@ export default function Navigation() {
               onClick={() => scrollToSection('shop')}
               className="w-full text-left px-5 py-3 text-xl font-bold text-foreground/90 rounded-xl bg-gradient-to-r from-primary/10 to-transparent hover:from-primary/30 hover:text-primary transition-all shadow-sm backdrop-blur-md border border-primary/20"
             >
-              🛍️ Shop
+              Shop
             </button>
             <button
               onClick={() => scrollToSection('about')}
               className="w-full text-left px-5 py-3 text-xl font-bold text-foreground/90 rounded-xl bg-gradient-to-r from-secondary/10 to-transparent hover:from-secondary/30 hover:text-secondary transition-all shadow-sm backdrop-blur-md border border-secondary/20"
             >
-              💎 About
+               About
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="w-full text-left px-5 py-3 text-xl font-bold text-foreground/90 rounded-xl bg-gradient-to-r from-accent/10 to-transparent hover:from-accent/30 hover:text-accent transition-all shadow-sm backdrop-blur-md border border-accent/20"
             >
-              📞 Contact
+               Contact
             </button>
             <Link
               to="/admin"
               className="w-full block px-5 py-3 text-xl font-bold bg-gradient-to-r from-primary to-secondary text-white rounded-xl hover:opacity-90 text-center transition-all shadow-lg border border-primary/40"
             >
-              🔒 Admin
+              Admin
             </Link>
           </div>
         </div>
