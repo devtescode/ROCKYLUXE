@@ -56,7 +56,7 @@ export default function FAQ() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
+    <section ref={sectionRef} className="relative py-4 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
