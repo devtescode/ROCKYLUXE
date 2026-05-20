@@ -462,9 +462,7 @@ export default function AdminDashboard({
             <div className="space-y-6 max-w-2xl">
               {/* Change Password */}
               <div>
-                <h4 className="text-lg font-semibold text-foreground mb-4">
-                  Change Password
-                </h4>
+            
 
                 <form
                   onSubmit={handleUpdatePassword}
