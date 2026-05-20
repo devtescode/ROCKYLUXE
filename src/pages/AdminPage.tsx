@@ -96,7 +96,7 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-[42px] text-muted-foreground hover:text-foreground"
+                className="absolute right-3 top-[47px] text-muted-foreground hover:text-foreground"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
