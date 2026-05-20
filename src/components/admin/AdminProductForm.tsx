@@ -347,7 +347,7 @@ export default function AdminProductForm({
         </div>
       </div>
 
-      <div>
+      <div className='mt-5'>
         <label className="block text-foreground font-semibold mb-2">
           Description *
         </label>
