@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AdminDashboard from '@/components/admin/AdminDashboard'
+import { Eye, EyeOff } from 'lucide-react'
 
 // const API_URL = ""
 
@@ -109,30 +110,35 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
 }
 
 /* ================= REGISTER ================= */
+
+
 function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
-  const [fullName, setFullName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
 
     try {
-      const res = await fetch("https://rockyluxe-bd.onrender.com/admin/register", {
-        // const res = await fetch("http://localhost:4000/jewelry/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          fullName,
-          email,
-          password
-        })
-      })
+      const res = await fetch(
+        "https://rockyluxe-bd.onrender.com/admin/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fullName,
+            email,
+            password,
+          }),
+        }
+      )
 
       const data = await res.json()
 
@@ -141,7 +147,6 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
         return
       }
 
-      // onSuccess()
       onSuccess && onSuccess()
     } catch (err) {
       setError("Network error")
@@ -156,14 +161,19 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
         </div>
-        <div className="relative bg-card border border-border rounded-2xl p-8">
 
+        <div className="relative bg-card border border-border rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-primary mb-2">ROCKYLUXE</h1>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Create Admin</h2>
+            <h1 className="text-4xl font-bold text-primary mb-2">
+              ROCKYLUXE
+            </h1>
+            <h2 className="text-2xl font-bold text-foreground mb-2">
+              Create Admin
+            </h2>
           </div>
 
           <form onSubmit={handleRegister} className="space-y-6">
+            {/* FULL NAME */}
             <div className="mt-4">
               <label className="block text-foreground font-semibold mb-2 mt-1">
                 fullName
@@ -178,6 +188,7 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
               />
             </div>
 
+            {/* EMAIL */}
             <div className="mt-4">
               <label className="block text-foreground font-semibold mb-2 mt-1">
                 Email
@@ -192,27 +203,37 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
               />
             </div>
 
-
-            <div className="mt-4">
-
+            {/* PASSWORD WITH TOGGLE */}
+            <div className="mt-4 relative">
               <label className="block text-foreground font-semibold mb-2 mt-1">
                 Password
               </label>
+
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 pr-16 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 disabled={isLoading}
               />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-[68%] -translate-y-1/2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
 
+            {/* ERROR */}
             {error && (
               <p className="text-red-500 text-center">{error}</p>
             )}
 
-            <div className='flex justify-center mt-5'>
+            {/* BUTTON */}
+            <div className="flex justify-center mt-5">
               <button
                 type="submit"
                 disabled={isLoading}
@@ -221,14 +242,14 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
                 {isLoading ? "Creating..." : "Create Admin"}
               </button>
             </div>
-
           </form>
-
         </div>
       </div>
     </div>
   )
 }
+
+// export default AdminRegister
 
 /* ================= MAIN PAGE ================= */
 export default function AdminPage() {
