@@ -57,7 +57,7 @@ export default function ProductModal({
         className="bg-black rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 flex justify-between items-center p-6 border-b border-border bg-black z-10">
+        <div className="sticky top-0 flex justify-between items-center p-6 border-none border-border bg-black z-10">
           <h2 className="text-2xl font-bold text-foreground">{product.name}</h2>
           <button
             onClick={onClose}
