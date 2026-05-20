@@ -40,10 +40,10 @@ export default function Contact() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-1">
             Contact
           </p>
-          <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-6">
+          <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
             <span className="text-gradient">Get in Touch</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
