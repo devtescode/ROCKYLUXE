@@ -489,10 +489,7 @@ export default function AdminDashboard({
                           className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary"
                           placeholder="Enter current password"
                           required
-                        />
-
-                        <div className="relative mt-5">
-
+                        />  
                         <button
                           type="button"
                           onClick={() =>
@@ -506,7 +503,6 @@ export default function AdminDashboard({
                             <Eye size={20} />
                           )}
                         </button>
-                        </div>
                       </div>
                     </div>
 
