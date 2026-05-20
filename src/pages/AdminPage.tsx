@@ -89,13 +89,15 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
 
             {error && <p className="text-red-500 text-center">{error}</p>}
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full px-6 mt-4 py-3 bg-primary text-primary-foreground font-bold rounded-lg"
-            >
-              {isLoading ? "Logging in..." : "Login"}
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-50 px-6 mt-5 py-3 bg-primary text-primary-foreground font-bold rounded-lg"
+              >
+                {isLoading ? "Logging in..." : "Login"}
+              </button>
+            </div>
           </form>
         </div>
       </div>
