@@ -164,7 +164,7 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
 
         <div className="relative bg-card border border-border rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-primary mb-2">
+            <h1 className="text-4xl font-bold text-primary mb-0">
               ROCKYLUXE
             </h1>
             <h2 className="text-2xl font-bold text-foreground mb-2">
