@@ -164,47 +164,55 @@ function AdminRegister({ onSuccess }: { onSuccess: () => void }) {
           </div>
 
           <form onSubmit={handleRegister} className="space-y-6">
-            <label className="block text-foreground font-semibold mb-2 mt-0">
-              fullName
-            </label>
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              disabled={isLoading}
-            />
+            <div className="mt-4">
+              <label className="block text-foreground font-semibold mb-2 mt-1">
+                fullName
+              </label>
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                disabled={isLoading}
+              />
+            </div>
 
-            <label className="block text-foreground font-semibold mb-2 mt-0">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              disabled={isLoading}
-            />
+            <div className="mt-4">
+              <label className="block text-foreground font-semibold mb-2 mt-1">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                disabled={isLoading}
+              />
+            </div>
 
-            <label className="block text-foreground font-semibold mb-2 mt-0">
-              Password
-            </label>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              disabled={isLoading}
-            />
+
+            <div className="mt-4">
+
+              <label className="block text-foreground font-semibold mb-2 mt-1">
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                disabled={isLoading}
+              />
+            </div>
 
             {error && (
               <p className="text-red-500 text-center">{error}</p>
             )}
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mt-5'>
               <button
                 type="submit"
                 disabled={isLoading}
