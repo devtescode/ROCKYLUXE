@@ -77,7 +77,7 @@ export default function Navigation() {
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden text-primary"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? "" : <Menu size={24} />}
             </button>
           </div>
         </div>
