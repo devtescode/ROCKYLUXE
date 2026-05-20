@@ -52,7 +52,7 @@ export default function About() {
               <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/50"></div>
             </div>
 
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mt-5">
               At ROCKYLUXE, we believe that jewelry is more than just an accessory it&apos;s a reflection of
               your personality and a celebration of life&apos;s precious moments.
             </p>
@@ -62,7 +62,7 @@ export default function About() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 mt-5">
               {[
                 { value: '5+', label: 'Years Experience' },
                 { value: '100+', label: 'Happy Customers' },
