@@ -8,9 +8,11 @@ interface AdminLoginProps {
   onSuccess: () => void
 }
 
+
 function AdminLogin({ onSuccess }: AdminLoginProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -19,7 +21,6 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
     setIsLoading(true)
 
     try {
-      // const res = await fetch("http://localhost:4000/admin/login", {
       const res = await fetch("https://rockyluxe-bd.onrender.com/admin/login", {
         method: "POST",
         headers: {
@@ -54,6 +55,7 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
         </div>
 
         <div className="relative bg-card border border-border rounded-2xl p-8 backdrop-blur-sm">
+
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-primary mb-2">ROCKYLUXE</h1>
             <h2 className="text-2xl font-bold text-foreground mb-2">Admin Login</h2>
@@ -76,19 +78,28 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
             </div>
 
             {/* PASSWORD */}
-            <div className="mt-4">
+            <div className="mt-4 relative">
               <label className="block text-foreground font-semibold mb-2 mt-1">
                 Password
               </label>
 
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter admin password"
-                className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 pr-12 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 disabled={isLoading}
               />
+
+              {/* TOGGLE ICON */}
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-[42px] text-muted-foreground hover:text-foreground"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
             </div>
 
             {error && <p className="text-red-500 text-center">{error}</p>}
@@ -102,13 +113,13 @@ function AdminLogin({ onSuccess }: AdminLoginProps) {
                 {isLoading ? "Logging in..." : "Login"}
               </button>
             </div>
+
           </form>
         </div>
       </div>
     </div>
   )
 }
-
 /* ================= REGISTER ================= */
 
 
