@@ -162,7 +162,7 @@ export default function Contact() {
             <div className='mt-5'>
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-[0_0_40px_rgba(200,162,74,0.5)] transition-all duration-300 hover:scale-105"
+                className=" px-6 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-[0_0_40px_rgba(200,162,74,0.5)] transition-all duration-300 hover:scale-105"
               >
                 Send Message
               </button>
