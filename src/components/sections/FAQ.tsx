@@ -85,7 +85,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                className="w-full flex justify-between items-center p-6 sm:p-7 glass border border-border/50 rounded-xl hover:border-primary/50 hover:shadow-[0_0_40px_rgba(200,162,74,0.2)] transition-all duration-300 group"
+                className="w-full flex justify-between items-center p-6 sm:p-7 glass border border-border/50 rounded-xl hover:border-primary/50 mt-4 hover:shadow-[0_0_40px_rgba(200,162,74,0.2)] transition-all duration-300 group"
               >
                 <span className="text-lg sm:text-xl font-bold text-foreground text-left group-hover:text-primary transition-colors">
                   {faq.question}
