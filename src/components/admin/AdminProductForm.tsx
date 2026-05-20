@@ -31,22 +31,22 @@ export default function AdminProductForm({
   const [formData, setFormData] = useState<Product>(
     product
       ? {
-          name: product.name,
-          price: String(product.price),
-          images:
-            product.images && Array.isArray(product.images)
-              ? product.images
-              : [],
-          description: product.description,
-          availability: product.availability,
-        }
+        name: product.name,
+        price: String(product.price),
+        images:
+          product.images && Array.isArray(product.images)
+            ? product.images
+            : [],
+        description: product.description,
+        availability: product.availability,
+      }
       : {
-          name: '',
-          price: '',
-          images: [],
-          description: '',
-          availability: 'In Stock',
-        }
+        name: '',
+        price: '',
+        images: [],
+        description: '',
+        availability: 'In Stock',
+      }
   )
 
   const [isLoading, setIsLoading] = useState(false)
@@ -364,17 +364,19 @@ export default function AdminProductForm({
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="w-full px-6 py-3 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-opacity-90 transition-all disabled:opacity-50"
-      >
-        {isLoading
-          ? 'Uploading...'
-          : product?.id
-            ? 'Update Product'
-            : 'Add Product'}
-      </button>
+      <div className='mt-5'>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className=" px-6 py-3 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-opacity-90 transition-all disabled:opacity-50"
+        >
+          {isLoading
+            ? 'Uploading...'
+            : product?.id
+              ? 'Update Product'
+              : 'Add Product'}
+        </button>
+      </div>
     </form>
   )
 }
