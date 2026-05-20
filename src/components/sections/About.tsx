@@ -21,7 +21,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-24 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-0 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48 animate-float"></div>
