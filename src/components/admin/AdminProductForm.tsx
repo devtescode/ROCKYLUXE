@@ -104,11 +104,16 @@ export default function AdminProductForm({
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value, files } = e.target
+    const target = e.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+    const { name, value } = target;
+    let files: FileList | null = null;
+    if (target instanceof HTMLInputElement && target.type === 'file') {
+      files = target.files;
+    }
     if (name === 'images' && files) {
-      addImageFiles(files)
+      addImageFiles(files);
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }))
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   }
 
